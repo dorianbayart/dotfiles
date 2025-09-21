@@ -1,11 +1,16 @@
 [core]
 	excludesFile = ~/.gitignore
 	autocrlf = input
-	editor = nvim
+	editor = vim
 [user]
 	name = Jonathan
 	email = contact@grafikart.fr
+	signingkey = ~/.ssh/git.pub
+[gpg]
+    format = ssh
 [fetch]
 	prune = true
 [init]
 	defaultBranch = main
+[commit]
+	gpgsign = true

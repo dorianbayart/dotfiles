@@ -7,14 +7,7 @@
 // custom settings, run the `open default settings` command
 // from the command palette or from `Zed` application menu.
 {
-  "assistant": {
-    "default_model": {
-      "provider": "ollama",
-      "model": "llama3.1:latest"
-    },
-    "version": "2"
-  },
-  "theme": "Catppuccin Mocha",
+  "theme": "Tokyo Night",
   "telemetry": {
     "diagnostics": false,
     "metrics": false

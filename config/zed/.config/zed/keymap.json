@@ -19,7 +19,8 @@
       "ctrl-shift-o": "editor::RevealInFileManager",
       "alt-&": "workspace::ToggleLeftDock",
       "alt-é": "workspace::ToggleRightDock",
-      "alt-enter": "editor::ToggleCodeActions"
+      "alt-enter": "editor::ToggleCodeActions",
+      "ctrl-k": "git_panel::OpenMenu"
     }
   }
 ]
