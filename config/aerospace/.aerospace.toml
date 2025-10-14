@@ -7,9 +7,7 @@ after-login-command = []
 # You can use it to add commands that run after AeroSpace startup.
 # 'after-startup-command' is run after 'after-login-command'
 # Available commands : https://nikitabobko.github.io/AeroSpace/commands
-after-startup-command = [
-  'exec-and-forget borders active_color=0xffe1e3e4 inactive_color=0xff494d64 width=5.0'
-]
+after-startup-command = []
 
 # Start AeroSpace at login
 start-at-login = true
@@ -59,10 +57,10 @@ automatically-unhide-macos-hidden-apps = false
 [gaps]
     inner.horizontal = 4
     inner.vertical =   4
-    outer.left =       2
-    outer.bottom =     2
-    outer.top =        2
-    outer.right =      2
+    outer.left =       0
+    outer.bottom =     0
+    outer.top =        0
+    outer.right =      0
 
 # 'main' binding mode declaration
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
@@ -168,6 +166,6 @@ automatically-unhide-macos-hidden-apps = false
     if.window-title-regex-substring = 'music'
     run = ['move-node-to-workspace 8']
 
-[[on-window-detected]]
-    if.app-id = 'com.apple.finder'
-    run = 'layout floating'
+# [[on-window-detected]]
+#     if.app-id = 'com.apple.finder'
+#     run = 'layout floating'

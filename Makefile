@@ -28,7 +28,7 @@ dotfiles:
 	mv ~/gitignore ~/.gitignore
 
 dd:
-	$(stow) code
+	$(stow) helix
 
 hyprland:
 	$(stow) hyprland

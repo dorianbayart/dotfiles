@@ -2,102 +2,27 @@
 " Inspiration :
 "   - https://www.cyberwizard.io/posts/the-ultimate-ideavim-setup/
 
-"" Base Settings
-"" ========================================================
+let mapleader = " "
 set scrolloff=10
-set linenumber
 set showmode
 set showcmd
+set visualbell
+set clipboard+=unnamed
+set notimeout
+set relativenumber
+set clipboard=unnamed
+set ignorecase
 set smartcase
 set incsearch
 set hlsearch
-set number relativenumber
-set visualbell
-set ignorecase=true
-set timeoutlen=750
 
-let mapleader = " "
+" Navigation between files
+map <Leader>ff :action GotoFile<CR>
+map <Leader>fr :action RecentFiles<CR>
 
-"" Plugin Settings
-"" ========================================================
+" Navigation inside a file
+map <Leader>gs :action GotoSymbol<CR>
+map <Leader>gm :action FileStructurePopup<CR>
+
+" Plugin
 set surround
-set highlightedyank
-set sneak
-set nerdtree
-" Easymotion settings
-set easymotion
-set notimeout
-
-" Don't use Ex mode, use Q for formatting.
-map Q gq
-
-"" Key mappings
-"" ========================================================
-" Quick jump
-" https://github.com/easymotion/vim-easymotion?tab=readme-ov-file#example-configuration
-let g:EasyMotion_do_mapping=0
-map s <Plug>(easymotion-bd-f)
-
-"" Leader commands
-"" ========================================================
-" Save
-nnoremap <leader>s :w<CR>
-
-" Comment lines
-map gcc <action>(CommentByLineComment)
-
-" Open NERDTree (use q to exit)
-map <leader>x :NERDTreeToggle<CR>
-
-" Folding
-map <leader>zc :action CollapseAllRegions<CR>
-map <leader>zo :action ExpandAllRegions<CR>
-
-" Window splits
-map <leader>wv <Action>(SplitVertically)
-map <leader>ws <Action>(SplitHorizontally)
-map <leader>wu <Action>(Unsplit)
-map <leader>wm <Action>(MoveEditorToOppositeTabGroup)
-
-" Actions
-map <leader>am <action>(ShowIntentionActions)
-map <leader>as <action>(SearchEverywhere)
-
-" File navigation
-map <leader>ff <action>(GotoFile)
-map <leader><leader> <action>(GotoFile)
-map <leader>fr <action>(RecentFiles)
-map <leader>fc <action>(FindInPath)
-map <leader>fl <action>(RecentLocations)
-map <leader>fs <action>(NewScratchFile)
-
-" Close active tab
-map <leader>q <action>(CloseContent)
-
-" Refactoring
-map <leader>rn <Action>(RenameElement)
-map <leader>rm <Action>(ExtractMethod)
-map <leader>rv <Action>(IntroduceVariable)
-map <leader>rf <Action>(IntroduceField)
-map <leader>rs <Action>(ChangeSignature)
-map <leader>rr <Action>(Refactorings.QuickListPopupAction)
-
-" Go to code
-nmap <leader>gd <Action>(GotoDeclaration)
-nmap <leader>gy <Action>(GotoTypeDeclaration)
-nmap <leader>gi <Action>(GotoImplementation)
-nmap <leader>gu <Action>(ShowUsages)
-nmap <leader>gt <Action>(GotoTest)
-nmap <leader>gf <Action>(Back)
-nmap <leader>gb <Action>(Forward)
-
-" System clipboard
-" changed from "+ to "* in version 2.5.0
-vmap <leader>y "*y
-vmap <leader>d "*d
-nmap <leader>y "*yy
-nmap <leader>p "*p
-nmap <leader>P "*P
-vmap <leader>p "*p
-vmap <leader>P "*P
-

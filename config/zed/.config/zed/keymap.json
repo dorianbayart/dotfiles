@@ -6,6 +6,7 @@
       "cmd-t": "workspace::ToggleBottomDock",
       "cmd-b": "editor::GoToDefinition",
       "cmd-d": "editor::SelectLargerSyntaxNode",
+      "cmd-k": "git_panel::ToggleFocus",
       "cmd-r": "search::ToggleReplace",
       "cmd-shift-d": "editor::SelectAllMatches",
       "cmd-shift-o": "editor::RevealInFileManager",
