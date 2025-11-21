@@ -1,28 +1,72 @@
-" IDEAVim configuration
-" Inspiration :
-"   - https://www.cyberwizard.io/posts/the-ultimate-ideavim-setup/
+" IDEAVim settings
+" Inspiration : https://www.cyberwizard.io/posts/the-ultimate-ideavim-setup/
 
 let mapleader = " "
+
+" Base settings
 set scrolloff=10
 set showmode
 set showcmd
-set visualbell
-set clipboard+=unnamed
-set notimeout
 set relativenumber
-set clipboard=unnamed
+set visualbell
 set ignorecase
 set smartcase
 set incsearch
 set hlsearch
+set surround
+set highlightedyank
+set sneak
+set easymotion
+set ideajoin
+set commentary
+set matchpairs+=<:>
+set matchit
+set timeoutlen=2000
+set functiontextobj
 
-" Navigation between files
-map <Leader>ff :action GotoFile<CR>
-map <Leader>fr :action RecentFiles<CR>
+" File navigation
+nmap <leader>f <action>(GotoFile)
+nmap <leader>e <action>(RecentFiles)
+" nmap <leader>fr <action>(RecentFiles)
+" map <leader>f <Plug>(easymotion-s)
+" map <leader>e <Plug>(easymotion-f)
+
+" Quick configuration edit
+noremap <leader>cc :edit ~/.ideavimrc<CR>
+noremap <leader>cs :source ~/.ideavimrc<CR>
+
+" Remove search highlights on escape
+noremap <Esc> :nohlsearch<CR>
 
 " Navigation inside a file
-map <Leader>gs :action GotoSymbol<CR>
+map <Leader>gr :action GotoSymbol<CR>
 map <Leader>gm :action FileStructurePopup<CR>
+nmap gpf [m<CR>
+nmap <leader>* viwy \| :%s/\<<c-r>+\>//g<left><left>
+map ge :action GotoNextError<CR>
 
-" Plugin
-set surround
+" Navigation between window
+map <C-Right> <C-w>l
+map <C-Left> <C-w>h
+
+" Flash vim
+nmap s <Action>(flash.search)
+xmap s <Action>(flash.search)
+" enhance vim f (find for char in characters to the right of the current cursor)
+nmap f <Action>(flash.find)
+xmap f <Action>(flash.find)
+" enhance vim F (find for char in characters to the left of the current cursor)
+nmap F <Action>(flash.find_backward)
+xmap F <Action>(flash.find_backward)
+" enhance vim t (till for char in characters to the right of the current cursor)
+nmap t <Action>(flash.till)
+xmap t <Action>(flash.till)
+" enhance vim T (till for char in characters to the left of the current cursor)
+nmap T <Action>(flash.till_backward)
+xmap T <Action>(flash.till_backward)
+" enhance vim ; (Repeat the last f/F/t/T search)
+nmap ; <Action>(flash.repeat)
+xmap ; <Action>(flash.repeat)
+" enhance vim , (Repeat the last f/F/t/T search backward)
+nmap , <Action>(flash.repeat_backward)
+xmap , <Action>(flash.repeat_backward)
